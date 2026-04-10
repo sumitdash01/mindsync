@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSync - Digital Mental Health Support for Students</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MindSync</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#ai-support" class="nav-link" data-section="ai-support">AI Support</a>
+                    <a href="#booking" class="nav-link" data-section="booking">Book Appointment</a>
+                    <a href="#resources" class="nav-link" data-section="resources">Resources</a>
+                    <a href="#peer-support" class="nav-link" data-section="peer-support">Peer Support</a>
+                    <a href="#profile" class="nav-link" data-section="profile">Profile</a>
+                </nav>
+                <div class="crisis-button">
+                    <button class="btn btn--primary btn--sm" id="crisisBtn">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Crisis Support
+                    </button>
+                    <div class="crisis-tooltip">24/7 immediate help available</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="welcome-section">
+                    <h1>Welcome to MindSync</h1>
+                    <p class="subtitle">Your comprehensive digital mental health companion designed specifically for students in higher education</p>
+                </div>
+                
+                <div class="quick-access-grid">
+                    <div class="card quick-access-card" data-section="ai-support">
+                        <div class="card__body">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Support Chat</h3>
+                            <p>Get instant mental health support or have casual conversations with our AI companion</p>
+                        </div>
+                    </div>
+                    <div class="card quick-access-card" data-section="booking">
+                        <div class="card__body">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>Book Appointment</h3>
+                            <p>Schedule confidential sessions with our qualified counsellors</p>
+                        </div>
+                    </div>
+                    <div class="card quick-access-card" data-section="resources">
+                        <div class="card__body">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Resources Hub</h3>
+                            <p>Access videos, audio content, meditation practices, and wellness guides</p>
+                        </div>
+                    </div>
+                    <div class="card quick-access-card" data-section="peer-support">
+                        <div class="card__body">
+                            <i class="fas fa-users"></i>
+                            <h3>Peer Community</h3>
+                            <p>Connect with fellow students in moderated support forums</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Support Section -->
+        <section id="ai-support" class="section">
+            <div class="container">
+                <h2>AI Support Chat</h2>
+                <div class="chat-modes">
+                    <button class="btn btn--secondary active" data-mode="mental-health">Mental Health Support</button>
+                    <button class="btn btn--secondary" data-mode="casual">Casual Conversation</button>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Hello! I'm here to support you with your mental health concerns. How are you feeling today?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Type your message..." class="form-control">
+                        <button class="btn btn--primary" id="sendMessage">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="section">
+            <div class="container">
+                <h2>Book Appointment</h2>
+                <div class="booking-grid">
+                    <div class="counsellors-list">
+                        <h3>Available Counsellors</h3>
+                        <div class="counsellor-cards" id="counsellorCards">
+                            <!-- Counsellor cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="booking-form">
+                        <h3>Schedule Your Session</h3>
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label class="form-label">Select Counsellor</label>
+                                <select class="form-control" id="selectedCounsellor" required>
+                                    <option value="">Choose a counsellor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Time</label>
+                                <select class="form-control" id="appointmentTime" required>
+                                    <option value="">Select time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Session Type</label>
+                                <select class="form-control" id="sessionType" required>
+                                    <option value="individual">Individual Counseling</option>
+                                    <option value="group">Group Session</option>
+                                    <option value="crisis">Crisis Intervention</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Brief Description (Optional)</label>
+                                <textarea class="form-control" id="sessionDescription" rows="3" placeholder="Briefly describe what you'd like to discuss..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2>Resources Hub</h2>
+                <div class="resources-categories" id="resourcesCategories">
+                    <!-- Resource categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Peer Support Section -->
+        <section id="peer-support" class="section">
+            <div class="container">
+                <h2>Peer Support Community</h2>
+                <div class="peer-forums" id="peerForums">
+                    <!-- Forum cards will be populated by JavaScript -->
+                </div>
+                <div class="community-guidelines">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Community Guidelines</h3>
+                            <ul>
+                                <li>Respect all members and maintain confidentiality</li>
+                                <li>No personal information sharing</li>
+                                <li>Use appropriate language and be supportive</li>
+                                <li>Report concerning posts to moderators</li>
+                                <li>Remember: This is peer support, not professional therapy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="container">
+                <h2>My Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profileName">Student Name</h3>
+                            <p id="profileEmail">student@example.com</p>
+                        </div>
+                        <button class="btn btn--secondary" id="editProfileBtn">Edit Profile</button>
+                    </div>
+                    <div class="profile-form-container">
+                        <form id="profileForm">
+                            <!-- Profile form fields will be populated by JavaScript -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Crisis Support Modal -->
+    <div class="modal hidden" id="crisisModal">
+        <div class="modal-overlay" id="crisisOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crisis Support</h2>
+                <button class="modal-close" id="closeCrisisModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="crisis-info">
+                    <p><strong>If you're in immediate danger, please call emergency services (100) right away.</strong></p>
+                    <h3>Crisis Support Numbers</h3>
+                    <div class="crisis-numbers" id="crisisNumbers">
+                        <!-- Crisis numbers will be populated by JavaScript -->
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn--secondary btn--full-width" id="editCrisisNumbers">Edit Crisis Numbers</button>
+                    </div>
+                    <div class="campus-info">
+                        <h4>Campus Counseling</h4>
+                        <p><i class="fas fa-phone"></i> 57092510</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Trident Academy Of Technology, Bhubaneswar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Crisis Numbers Modal -->
+    <div class="modal hidden" id="editCrisisModal">
+        <div class="modal-overlay" id="editCrisisOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Crisis Numbers</h2>
+                <button class="modal-close" id="closeEditCrisisModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editCrisisForm">
+                    <div id="crisisNumberInputs">
+                        <!-- Crisis number inputs will be populated by JavaScript -->
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary">Save Changes</button>
+                        <button type="button" class="btn btn--secondary" id="cancelEditCrisis">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-branding">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MindSync</span>
+                    </div>
+                    <p class="footer-tagline">Bridging the gap between students and mental health support through technology, compassion, and community.</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Emergency Contacts</h4>
+                    <div class="contact-buttons">
+                        <a href="mailto:support@mindsync.edu" class="btn btn--outline btn--sm">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                        <a href="tel:57301580" class="btn btn--primary btn--sm">
+                            <i class="fas fa-phone"></i> Crisis Line
+                        </a>
+                    </div>
+                    <div class="emergency-info">
+                        <p><strong>24/7 Crisis Line:</strong> 57301580</p>
+                        <p><strong>Campus Counseling:</strong> 57092510</p>
+                        <p><strong>Location:</strong> Trident Academy Of Technology, Bhubaneswar</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Access</h4>
+                    <ul>
+                        <li><a href="#ai-support" data-section="ai-support">AI Support Chat</a></li>
+                        <li><a href="#booking" data-section="booking">Book Appointment</a></li>
+                        <li><a href="#resources" data-section="resources">Resources Hub</a></li>
+                        <li><a href="#peer-support" data-section="peer-support">Peer Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 MindSync</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="chat-modal" aria-hidden="true">
+      <div class="chat-panel">
+        <div class="chat-header">
+          <h3>MindSync Chat</h3>
+          <button id="closeChat" class="icon-btn" aria-label="Close chat">&times;</button>
+        </div>
+        <div id="chatMessages" class="chat-messages" role="log" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form">
+          <input id="chatInput" type="text" placeholder="Type a message... (press Enter to send)" autocomplete="off" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <button id="openChatBtn" class="floating-chat-btn" title="Open MindSync Chat">
+      <i class="fas fa-comments"></i>
+    </button>
+    
+</body>
+</html>

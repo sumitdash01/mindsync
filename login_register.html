@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSync - Login & Register</title>
+  <link rel="stylesheet" href="login_register.css">
+</head>
+<body>
+  <header>
+    <a href="home.html" class="brand">MindSync</a>
+  </header>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="logreg-box">
+        <!-- Login form -->
+        <div class="form-boxlogin active">
+          <div class="logreg-title">
+            <h2>Login</h2>
+            <p>Please login to use this platform</p>
+          </div>
+          <form action="login.php" method="POST">
+            <div class="input-box">
+              <label>Email</label>
+              <input type="email" required name="email_login">
+            </div>
+            <div class="input-box">
+              <label>Password</label>
+              <input type="password" required name="pass_login">
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox"> Remember me</label>
+              <a href="#">Forget Password?</a>
+            </div>
+            <button type="submit" name="login" class="btn">Login</button>
+            <div class="logreg-link">
+              <p>Don't have an Account? <a href="#" class="register-link">Register</a></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Registration form -->
+        <div class="form-boxregister">
+          <div class="logreg-title">
+            <h2>Registration</h2>
+            <p>Please provide the following details to register</p>
+          </div>
+          <form action="logreg.php" method="POST">
+            <div class="input-box"><label>Full Name</label><input type="text" required name="fullName"></div>
+            <div class="input-box"><label>Age</label><input type="number" required name="age"></div>
+            <div class="input-box"><label>Education</label><input type="text" required name="education"></div>
+            <div class="input-box"><label>Gender</label>
+              <select name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to say</option>
+              </select>
+            </div>
+            <div class="input-box"><label>Email</label><input type="email" required name="email"></div>
+            <div class="input-box"><label>College</label><input type="text" required name="collegeName"></div>
+            <div class="input-box"><label>Contact Number</label><input type="tel" required name="contactNumber"></div>
+            <div class="input-box"><label>Secondary Contact</label><input type="tel" name="secondaryContact"></div>
+            <div class="input-box"><label>Password</label><input type="password" required name="password"></div>
+            <div class="remember-forgot"><label><input type="checkbox" required> I agree to Terms & Conditions</label></div>
+            <button type="submit" name="register" class="btn">Register</button>
+            <div class="logreg-link">
+              <p>Already have an Account? <a href="#" class="login-link">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="login_register.js"></script>
+</body>
+</html>
